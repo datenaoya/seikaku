@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  <script src="components/loader.js"></script>
+  <script src="lib/onsenui/js/onsenui.min.js"></script>
+
+  <link rel="stylesheet" href="components/loader.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+   //問題データ(json)を取得
+   var yesno;    //問題データ
+   
+   $.getJSON("date.json", function(result){
+       yesno = result;
+    })
+    
+    //スタートボタンが押された時
+    var score;      //スコア
+    var current;    //現在の問題番号
+    
+    function start(){
+        score = 0;
+        current = 0;
+        
+        //問題ページ(yesno.html)に遷移する
+        document.getElementById("navi").pushPage("yesno.html");
+        
+    }
+    
+    //問題ページに問題を表示する
+    //init:そのページを開いた時
+    document.addEventListener('init',function(event){
+        var page = event.target;//event.targetどのページが開かれたか
+        
+        if(page.id == "yesno-page"){
+            
+            console.log("AAAAA");
+            //jsonのデータをページにセットする
+            var title = yesno[current].no + yesno[current].title;
+            page.querySelector('#title').innerHTML = title;
+            page.querySelector('#btn1').innerHTML = yesno[current].choice1;
+            page.querySelector('#btn2').innerHTML = yesno[current].choice2;
+            
+           
+        }
+    })
+         
+    function select(choiceNo){
+
+        if(choiceNo == "yes"){
+            if(isNaN(yesno[current].Yes)==true){
+                //結果ページに遷移
+                document.getElementById("navi").pushPage("cat.html");
+                document.getElementById("navi").pushPage("dog.html");
+                document.getElementById("navi").pushPage("rabbit.html");
+                
+            }else{
+                //問題ページに遷移
+                current = yesno[current].Yes;
+                
+            }
+            
+            
+            
+        }else{
+             if(isNaN(yesno[current].No)==true){
+                //結果ページに遷移
+                document.getElementById("navi").pushPage("snake.html");
+                document.getElementById("navi").pushPage("boar.html");
+                document.getElementById("navi").pushPage("sheep.html");
+                
+            }else{
+                //問題ページに遷移
+                current = yesno[current].No;
+                
+            }
+            
+            
+        }
+        //問題ページ(yesno.html)に遷移する
+        document.getElementById("navi").pushPage("yesno.html");
+    
+    }
+    
+ 
+  </script>
+</head>
+<body>
+    <ons-navigator id="navi" page="top.html">
+    </ons-navigator>
+</body>
+</html>

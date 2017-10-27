@@ -1,0 +1,90 @@
+[
+    {
+        "no":"設問A",
+        "title":"インドアよりもアウトドアの遊びの方が好きだ",
+        "choice1":"Yes",
+        "choice2":"No",
+        "Yes":1,
+        "No":3
+    
+    },
+    {
+        "no":"設問B",
+        "title":"好きな食べ物でも2日連続だと飽きてしまう",
+        "choice1":"Yes",
+        "choice2":"no",
+        "Yes":2,
+        "No":4
+    
+    },
+    {
+        "no":"設問C",
+        "title":"約束当日にドタキャンしたことが何回かある",
+        "choice1":"Yes",
+        "choice2":"No",
+        "Yes":"cat.html",
+        "No":5
+        
+    
+    },
+    {
+        "no":"設問D",
+        "title":"青や水色などの爽やかな色が好きだ",
+        "choice1":"Yes",
+        "choice2":"No",
+        "Yes":4,
+        "No":6
+        
+    
+    },
+    {
+        "no":"設問E",
+        "title":"一人よりも大勢でいる方が好きだ",
+        "choice1":"Yes",
+        "choice2":"No",
+        "Yes":5,
+        "No":7
+        
+    
+    },
+    {
+        "no":"設問F",
+        "title":"人見知りはしない方だ",
+        "choice1":"Yes",
+        "choice2":"No",
+        "Yes":"dog.html",
+        "No":8
+        
+    
+    },
+    {
+        "no":"設問G",
+        "title":"アクション映画が好きだ",
+        "choice1":"Yes",
+        "choice2":"No",
+        "Yes":7,
+        "No":"snake.html"
+        
+    
+    },
+    {
+        "no":"設問H",
+        "title":"夏休みの宿題はギリギリまで手をつけないタイプだ",
+        "choice1":"Yes",
+        "choice2":"No",
+        "Yes":8,
+        "No":"boar.html"
+        
+    
+    },
+    {
+        "no":"設問I",
+        "title":"サプライズをされると嬉しい",
+        "choice1":"Yes",
+        "choice2":"No",
+        "Yes":"rabbit.html",
+        "No":"sheep.html"
+        
+    
+    }
+]
